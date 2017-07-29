@@ -5,6 +5,8 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$separator-color: #eaeaea;
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -65,4 +67,24 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-body {
+  border-top: 1px solid $separator-color;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
