@@ -78,6 +78,11 @@ footer ul li {
   margin-top: 0;
 }
 
+.article-metadata {
+  border-top: 1px solid $separator-color;
+  margin-top: 15px;
+}
+
 .article-title {
   font-weight: bold;
   font-size: 1.5em;
