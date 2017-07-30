@@ -15,7 +15,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @articles = @user.articles
+  end
+
   def edit
+
+  end
+
+  def destroy
 
   end
 
