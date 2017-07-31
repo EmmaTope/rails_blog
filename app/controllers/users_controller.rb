@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :require_same_user, only: [:destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to Rails blog #{@user.username}"
       redirect_to articles_path
     else
@@ -24,16 +26,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   def destroy
-
   end
 
   def update
     if @user.update(user_params)
-      flash[:success] = "Your account was updated successfully"
+      flash[:success] = 'Your account was updated successfully'
       redirect_to articles_path
     else
       render 'edit'
@@ -48,6 +48,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find params[:id]
+  end
+
+  def require_same_user
+    return if logged_in? && current_user?(@user)
+
+    flash[:danger] = 'You can only edit your own account.'
+    redirect_to users_path
   end
 
 end
