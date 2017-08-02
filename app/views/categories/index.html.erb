@@ -10,6 +10,7 @@
             <%= link_to "#{category.name}", category_path(category) %>
           </li>
           <li>
+            <small><%= pluralize category.articles.count, 'articles' %></small>
           </li>
         </div>
       </div>
@@ -17,3 +18,5 @@
 <% end %>
 
 <%= will_paginate class: 'text-center' %>
+
+

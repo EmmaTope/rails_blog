@@ -13,7 +13,7 @@
 
           <li>
             <small>
-              <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
+              <%= pluralize(@article.user.articles.count, 'article') if @article.user.articles %>
             </small>
           </li>
         </div>
@@ -24,6 +24,10 @@
   <hr>
 
   <%= simple_format(@article.description) %>
+
+  <% if @article.categories.any? %>
+      <p>Categories: <%= render @article.categories %></p>
+  <% end %>
 
   <% if logged_in? && (current_user?(@article.user) || current_user.admin?)%>
     <div class="article-actions">
