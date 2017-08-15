@@ -1,4 +1,4 @@
-<%= form_for @user, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+<%= form_for @user, :url=> @user.new_record? ? '/signup': "/users/#{current_user.id}", html: { class: 'form-horizontal', role: 'form' } do |f| %>
     <div class="form-group">
       <%= f.label :username, class: 'col-sm-2 control-label' %>
       <div class="col-sm-8">

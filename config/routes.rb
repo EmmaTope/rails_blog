@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
-  resources :users, except: [:new]
+  resources :users, except: [:new, :create]
   resources :categories, except: [:destroy]
 
   get 'signup',     to: 'users#new'
+  post 'signup',     to: 'users#create'
   get 'login',      to: 'sessions#new'
   post 'login',     to: 'sessions#create'
   delete 'logout',  to: 'sessions#destroy'
