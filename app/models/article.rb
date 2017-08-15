@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_many :categories, through: :article_categories
 
   validates :title, length: { in: 3..50 }
-  validates :description, presence: true, length: { in: 10..500 }
+  validates :description, presence: true, length: { minimum: 10 }
   validates :user_id, presence: true
 
 end

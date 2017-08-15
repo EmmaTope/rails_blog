@@ -9,7 +9,7 @@
     <div class="form-group">
       <%= f.label :description, class: 'col-sm-2 control-label' %>
       <div class="col-sm-8">
-        <%= f.text_area :description, class: 'form-control', placeholder: 'Body of Article', rows: 8 %>
+        <%= f.text_area :description, :class => "tinymce", :rows => 20, :cols => 120 %>
       </div>
     </div>
 
@@ -37,3 +37,5 @@
     [ <%= link_to 'Cancel and Return to Articles', articles_path %> ]
   </div>
 </div>
+
+<%= tinymce %>

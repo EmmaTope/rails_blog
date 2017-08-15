@@ -1,0 +1,20 @@
+toolbar:
+  - styleselect | bold italic | undo redo | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent
+  - link | code codesample
+plugins:
+  - image
+  - link
+  - code
+  - codesample
+  - autoresize
+  - imagetools
+  - media
+  - table
+  - insertdatetime
+  - charmap
+  - print
+  - preview
+  - anchor
+  - searchreplace
+  - visualblocks
+  - fullscreen

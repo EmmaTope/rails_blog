@@ -6,7 +6,7 @@
       </div>
 
       <div class="article-body">
-        <%= truncate(article.description, length: 100) %>
+        <%= sanitize(article.description).truncate(100).html_safe %>
 
         <div class="article-metadata">
           <small>

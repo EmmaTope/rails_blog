@@ -23,7 +23,7 @@
   <h4 class="text-center description"><strong>Description:</strong></h4>
   <hr>
 
-  <%= simple_format(@article.description) %>
+  <%= sanitize(@article.description) %>
 
   <% if @article.categories.any? %>
       <p>Categories: <%= render @article.categories %></p>
